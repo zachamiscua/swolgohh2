@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grace Community Church</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <h1>SWOLGO HH2</h1>
+        <p>Welcome to a place of worship and fellowship</p>
+        <button id="darkModeBtn">🌙 Dark Mode</button>
+    </div>
+</header>
+
+<nav>
+    <div class="nav-container">
+        <a href="#about" class="active">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#events">Events</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<main>
+    <section id="about" class="container">
+        <h2>About Our Church</h2>
+        <p>We are a loving community committed to faith, hope, and charity.</p>
+        <button class="btn" onclick="openPopup()">Request Prayer</button>
+    </section>
+
+    <section id="services" class="services container">
+        <h2>Service Times</h2>
+        <div class="service-times">
+            <div class="service-card"><h3>Sunday Worship</h3><p>2:00 PM @swolgo.hh2</p></div>
+            <div class="service-card"><h3>Outreach</h3><p>Saturday 7:00 - 10:00 AM</p></div>
+            <div class="service-card"><h3>Life Group</h3><p>Saturday 7:00 - 10:00 AM</p></div>
+        </div>
+    </section>
+
+    <section id="gallery" class="container">
+        <h2>Church Gallery</h2>
+        <div class="gallery">
+            <img src="https://scontent.fmnl14-2.fna.fbcdn.net/v/t39.30808-6/307113493_1107519113210714_8567881302046752575_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeExKC62s3pcEJKSF3o46C7tvxsQcvcJwDe_GxBy9wnAN7ij4jrPEu89R6BKte0GtzfURqG7NvVG_iNvrBQJp-uY&_nc_ohc=XJB7bYk8TaQQ7kNvwFcQzKx&_nc_oc=AdkMGQ2fw5ULsefycYABBXr7QywWfsVCPaAAFj0qKoXPkuI72EExOvYRrUpkixTdMkQ&_nc_zt=23&_nc_ht=scontent.fmnl14-2.fna&_nc_gid=3U0xk2NBylWBQVarc3p56Q&oh=00_AfV_LzBf1Jms-m5qAr8MTYZM9Hxs4x_CZ8PjLMbc2WvitA&oe=68B527FA" alt="Gallery Image" id="galleryImage">
+            <div class="gallery-buttons">
+                <button onclick="prevImage()">&#10094;</button>
+                <button onclick="nextImage()">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="events" class="container">
+        <h2>Upcoming Events</h2>
+        <ul id="eventList"></ul>
+    </section>
+
+    <section id="bibleVerse" class="container bible-section">
+    <h2>Daily Bible Verse</h2>
+    <div class="bible-card">
+        <div class="bible-icon">✝️</div>
+        <p id="verse" class="verse-text">Loading verse...</p>
+        <p id="reference" class="verse-ref"></p>
+        <button class="btn" onclick="getNewVerse()">🔄 New Verse</button>
+    </div>
+</section>
+
+
+    <section id="contact" class="container contact-section">
+    <h2>Contact Us</h2>
+    <div class="contact-wrapper">
+        
+        <!-- Contact Info -->
+        <div class="contact-info">
+            <h3>Send The Word Of Life Global Outreach HH2</h3>
+            <p><strong>Address:</strong> Blk 12, Lot 29, Graceville 1 Subdivision Muzon SJDM Bulacan</p>
+            <p><strong>Phone:</strong> 09942581740</p>
+            <p><strong>Email:</strong> tibejoemar@gmail.com</p>
+
+            <!-- Google Map -->
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387190.27990204116!2d-74.25986768892366!3d40.69767006403737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDQxJzUwLjAiTiA3NMKwMTUnNTAuMCJX!5e0!3m2!1sen!2sus!4v1626869208936!5m2!1sen!2sus" 
+                    width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <form id="contactForm">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="4" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+            <p id="formMessage" class="success-msg"></p>
+        </div>
+
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <p>&copy; 2025 Grace Community Church | All Rights Reserved</p>
+</footer>
+
+<!-- Prayer Popup -->
+<div class="popup" id="prayerPopup">
+    <div class="popup-content">
+        <h3>Prayer Request</h3>
+        <textarea placeholder="Write your prayer request..." rows="4"></textarea>
+        <br><br>
+        <button class="btn" onclick="closePopup()">Submit</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
